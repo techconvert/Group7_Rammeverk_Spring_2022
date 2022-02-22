@@ -4,14 +4,10 @@ public class WebGen {
     private int test;
 
     public WebGen() {
-        test = 10;
+
     }
 
-    public int getTest() {
-        return test;
-    }
-
-    public void generateHtmlPage() {
+    public void createPage(String webPage) {
         System.out.println("The library generated an HTML page.");
     }
 }
