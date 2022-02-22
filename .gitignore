@@ -18,10 +18,3 @@ gradle-app.setting
 .classpath
 WebGenLib/out/artifacts/WebGenLib_jar/WebGenLib.jar
 WebGenLib/.idea/artifacts/WebGenLib_jar2.xml
-*.iml
-*.xml
-.idea/modules.xml
-.idea/prosjekt_gruppe7.iml
-.idea/vcs.xml
-.idea/runConfigurations.xml
-.idea/prosjekt_gruppe7.iml
