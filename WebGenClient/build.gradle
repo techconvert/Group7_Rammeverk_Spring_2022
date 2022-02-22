@@ -1,0 +1,23 @@
+plugins {
+    id 'java'
+}
+
+group 'no.hiof.rammeverk.spring2022.group7'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs '..\\WebGenLib\\build\\libs'
+    }
+}
+
+dependencies {
+    implementation 'no.hiof.rammeverk.spring2022.group7:WebGenLib:1.0-SNAPSHOT'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
+}
+
+test {
+    useJUnitPlatform()
+}
