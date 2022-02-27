@@ -2,16 +2,16 @@ package no.hiof.rammeverk.spring2022.group7.WebGenLib;
 
 public class Element {
 
-    public Element() {
+    private Element() {
 
     }
 
-    public void create(String type) {
-
+    public static Element create(String type) {
+        return null;
     }
 
-    public void create(String heading, String text) {
-
+    public static Element create(String heading, String text) {
+        return null;
     }
 
     public void setRows(int numOfRows) {
