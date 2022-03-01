@@ -1,13 +1,14 @@
 package no.hiof.rammeverk.spring2022.group7.WebGenLib;
 
 public class Element {
+    String tag;
 
     private Element() {
-
     }
 
-    public static Element create(String type) {
-        return null;
+    public Element create(String typeOfElement) {
+        this.tag = typeOfElement;
+        return this;
     }
 
     public static Element create(String heading, String text) {
