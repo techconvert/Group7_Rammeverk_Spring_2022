@@ -1,6 +1,13 @@
 package no.hiof.rammeverk.spring2022.group7.WebGenLib;
 
-public class MediaQueryMap extends MediaQuery{
+import java.util.HashMap;
 
+public class MediaQueryMap {
+
+    HashMap<String, MediaQuery> mediaQueryHashMap;
+
+    protected MediaQueryMap() {
+        this.mediaQueryHashMap = new HashMap<>();
+    }
 
 }

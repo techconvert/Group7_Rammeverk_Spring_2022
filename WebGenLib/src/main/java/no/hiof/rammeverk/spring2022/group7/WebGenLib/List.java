@@ -1,13 +1,13 @@
 package no.hiof.rammeverk.spring2022.group7.WebGenLib;
 
-public class List {
+public class List extends Element {
 
-    public List() {
+    protected List() {
 
     }
 
-    public void create(String listType) {
-
+    public static List create(String listType) {
+        return new List();
     }
 
     public void append(String text) {

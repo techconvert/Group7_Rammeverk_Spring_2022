@@ -1,21 +1,30 @@
 package no.hiof.rammeverk.spring2022.group7.WebGenLib;
 
 public class Element {
+    String tag;
+    String text;
 
-    private Element() {
-
+    protected Element() {
+        
     }
 
-    public static Element create(String type) {
-        return null;
+    protected Element(String tag) {
+        this.tag = tag;
+    }
+
+    public static Element create(String typeOfElement) {
+        return new Element(typeOfElement);
     }
 
     public static Element create(String heading, String text) {
         return null;
     }
 
-    public void setRows(int numOfRows) {
+    public void render() {
+        System.out.println(tag);
+    }
 
+    public void setRows(int numOfRows) {
     }
 
     public void appendRow() {
@@ -30,7 +39,9 @@ public class Element {
 
     }
 
-    public void addText(String text) {
+    public String addText(String text) {
+        this.text = text;
+        return text;
 
     }
 

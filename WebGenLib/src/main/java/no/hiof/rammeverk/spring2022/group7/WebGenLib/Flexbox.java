@@ -2,7 +2,7 @@ package no.hiof.rammeverk.spring2022.group7.WebGenLib;
 
 public class Flexbox extends CSS {
 
-    public Flexbox() {
+    protected Flexbox() {
 
     }
 
@@ -10,7 +10,7 @@ public class Flexbox extends CSS {
 
     }
 
-    public void createFlex(String type, String orientation) {
-
+    public Flexbox createFlex(String type, String orientation) {
+        return new Flexbox();
     }
 }
