@@ -9,7 +9,11 @@ public class Client {
 
         WebGen wgl = new WebGen();
 
+
         wgl.createPage("Hello!");
         System.out.println();
+
+        wgl.createPage("test");
+
     }
 }
