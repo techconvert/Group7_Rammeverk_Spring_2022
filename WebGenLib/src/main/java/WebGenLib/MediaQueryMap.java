@@ -1,4 +1,4 @@
-package no.hiof.rammeverk.spring2022.group7.WebGenLib;
+package WebGenLib;
 
 import java.util.HashMap;
 

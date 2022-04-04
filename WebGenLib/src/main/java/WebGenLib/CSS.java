@@ -1,4 +1,4 @@
-package no.hiof.rammeverk.spring2022.group7.WebGenLib;
+package WebGenLib;
 
 public abstract class CSS {
 
@@ -9,7 +9,7 @@ public abstract class CSS {
         return null;
     }
 
-    public void createBorder(String type, String thickness) {}
+    public void createBorder(String type, String weight) {}
 
     public void createPadding(String size) {}
 }
