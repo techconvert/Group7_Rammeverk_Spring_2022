@@ -2,10 +2,9 @@ package WebGenLib;
 
 import java.util.ArrayList;
 
-public class Element {
+public class Element implements HTMLContent {
     String tag;
-    String text;
-    ArrayList<Element> elements = new ArrayList<>();
+    ArrayList<HTMLContent> content = new ArrayList<>();
     ArrayList<Attribute> attributes = new ArrayList<>();
 
     protected Element() {
@@ -32,8 +31,8 @@ public class Element {
      * @param child The element to add.
      * @return
      */
-    public Element insert(Element child) {
-        elements.add(child);
+    public Element insert(HTMLContent child) {
+        content.add(child);
         return this;
     }
 
@@ -51,11 +50,8 @@ public class Element {
             System.out.print(" " + attribute.getName() + "=\"" + attribute.getValue() + "\"");
         }
         System.out.println(">");
-        if (text != null) {
-            System.out.println(text);
-        }
-        for (Element element : elements) {
-            element.render();
+        for (HTMLContent child : content) {
+            child.render();
         }
 
         System.out.println("</" + tag + ">");
@@ -77,18 +73,6 @@ public class Element {
     }
 
     public void setColumns(int numOfColumns) {
-
-    }
-
-    /**
-     * Inserts desired text into any element of choice.
-     *
-     * @param text
-     * @return
-     */
-    public String addText(String text) {
-        this.text = text;
-        return text;
 
     }
 

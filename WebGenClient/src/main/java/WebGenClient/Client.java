@@ -16,7 +16,11 @@ public class Client {
         Element element = Element.create("body");
         Element header = Element.create("header");
         Element heading = Element.create("h2");
-        heading.addText("Welcome to the web!");
+        heading.insert(new HTMLText("Welcome to "));
+        Element part = Element.create("b");
+        part.insert(new HTMLText("the"));
+        heading.insert(part);
+        heading.insert(new HTMLText(" web!"));
         element.insert(header);
         header.insert(heading);
         Element link = Element.create("a");
