@@ -1,5 +1,5 @@
 .gradle
-**/build/
+WebGenLib/build/
 !src/**/build/
 
 # Ignore Gradle GUI config
@@ -25,3 +25,4 @@ WebGenLib/.idea/artifacts/WebGenLib_jar2.xml
 .idea/misc.xml
 .idea/jarRepositories.xml
 .idea/gradle.xml
+WebGenClient/build/tmp/compileJava/previous-compilation-data.bin

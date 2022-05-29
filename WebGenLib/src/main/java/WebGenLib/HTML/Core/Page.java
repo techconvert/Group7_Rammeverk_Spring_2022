@@ -6,6 +6,11 @@ public class Page implements HTMLContent {
     protected Element head;
     protected Element body;
 
+    public Page() {
+        head = new Element("head");
+        body = new Element("body");
+    }
+
     @Override
     public void render() {
         System.out.println("<html>");
