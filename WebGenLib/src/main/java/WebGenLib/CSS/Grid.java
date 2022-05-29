@@ -1,6 +1,8 @@
-package WebGenLib;
+package WebGenLib.CSS;
 
-public class Grid extends CSS {
+import WebGenLib.CSS.Core.Style;
+
+public class Grid extends Style {
 
     protected Grid() {
 

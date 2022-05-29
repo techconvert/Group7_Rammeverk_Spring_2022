@@ -1,9 +1,11 @@
-package WebGenLib;
+package WebGenLib.HTML.Core;
 
-public class HTMLText implements HTMLContent {
+import WebGenLib.Interfaces.HTMLContent;
+
+public class TextContent implements HTMLContent {
     private String text;
 
-    public HTMLText(String text) {
+    public TextContent(String text) {
         this.text = text;
     }
 

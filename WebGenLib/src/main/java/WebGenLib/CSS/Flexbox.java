@@ -1,6 +1,8 @@
-package WebGenLib;
+package WebGenLib.CSS;
 
-public class Flexbox extends CSS {
+import WebGenLib.CSS.Core.Style;
+
+public class Flexbox extends Style {
 
     protected Flexbox() {
 

@@ -1,6 +1,9 @@
-package WebGenLib;
+package WebGenLib.HTML.Core;
 
-public class Attribute extends CSS {
+import WebGenLib.CSS.Core.Style;
+import WebGenLib.CSS.MediaQuery;
+
+public class Attribute extends Style {
     String name;
     String value;
 

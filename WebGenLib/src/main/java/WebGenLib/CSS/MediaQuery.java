@@ -1,8 +1,10 @@
-package WebGenLib;
+package WebGenLib.CSS;
+
+import WebGenLib.CSS.Core.Style;
 
 import java.util.HashMap;
 
-public class MediaQuery extends CSS {
+public class MediaQuery extends Style {
 
     protected MediaQuery() {
 

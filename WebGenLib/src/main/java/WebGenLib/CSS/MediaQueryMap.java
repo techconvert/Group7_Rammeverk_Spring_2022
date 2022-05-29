@@ -1,4 +1,4 @@
-package WebGenLib;
+package WebGenLib.CSS;
 
 import java.util.HashMap;
 

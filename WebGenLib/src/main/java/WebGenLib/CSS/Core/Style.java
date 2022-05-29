@@ -1,8 +1,10 @@
-package WebGenLib;
+package WebGenLib.CSS.Core;
 
-public abstract class CSS {
+import WebGenLib.HTML.Core.Attribute;
 
-    protected CSS() {
+public abstract class Style {
+
+    protected Style() {
 
     }
     public Attribute createBackgroundColor(String color) {

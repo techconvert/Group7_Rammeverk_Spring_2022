@@ -1,5 +1,6 @@
 package WebGenClient;
 import WebGenLib.*;
+import WebGenLib.HTML.Core.*;
 
 public class Client {
 
@@ -16,11 +17,11 @@ public class Client {
         Element element = Element.create("body");
         Element header = Element.create("header");
         Element heading = Element.create("h2");
-        heading.insert(new HTMLText("Welcome to "));
+        heading.insert(new TextContent("Welcome to "));
         Element part = Element.create("b");
-        part.insert(new HTMLText("the"));
+        part.insert(new TextContent("the"));
         heading.insert(part);
-        heading.insert(new HTMLText(" web!"));
+        heading.insert(new TextContent(" web!"));
         element.insert(header);
         header.insert(heading);
         Element link = Element.create("a");

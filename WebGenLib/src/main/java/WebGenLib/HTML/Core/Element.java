@@ -1,4 +1,6 @@
-package WebGenLib;
+package WebGenLib.HTML.Core;
+
+import WebGenLib.Interfaces.HTMLContent;
 
 import java.util.ArrayList;
 

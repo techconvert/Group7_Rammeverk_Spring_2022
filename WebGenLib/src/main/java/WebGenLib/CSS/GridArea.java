@@ -1,4 +1,4 @@
-package WebGenLib;
+package WebGenLib.CSS;
 
 public class GridArea extends Grid {
 

@@ -1,4 +1,6 @@
-package WebGenLib;
+package WebGenLib.HTML;
+
+import WebGenLib.HTML.Core.Element;
 
 public class List extends Element {
 
