@@ -3,6 +3,8 @@ package WebGenLib.HTML.Core;
 import WebGenLib.HTML.*;
 import WebGenLib.Interfaces.HTMLContent;
 
+import java.io.OutputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class Element implements HTMLContent {
@@ -70,16 +72,16 @@ public class Element implements HTMLContent {
     /**
      * Displays content.
      */
-    public void render() {
-        System.out.print("<" + tag);
+    public void render(OutputStream destination)  throws Exception{
+        destination.write(new String("<" + tag).getBytes(StandardCharsets.UTF_8));
         for (Attribute attribute : attributes) {
-            System.out.print(" " + attribute.getName() + "=\"" + attribute.getValue() + "\"");
+            destination.write(new String(" " + attribute.getName() + "=\"" + attribute.getValue() + "\"").getBytes(StandardCharsets.UTF_8));
         }
-        System.out.println(">");
+        destination.write(new String(">\n").getBytes(StandardCharsets.UTF_8));
         for (HTMLContent child : content) {
-            child.render();
+            child.render(destination);
         }
-        System.out.println("</" + tag + ">");
+        destination.write(new String("</" + tag + ">\n").getBytes(StandardCharsets.UTF_8));
     }
 
     /**
@@ -103,56 +105,7 @@ public class Element implements HTMLContent {
 
     }
 
-    /**
-     * Inserts image or video into the page.
-     *
-     * @param media String that defines type of media.
-     * @param path String that defines the path of the media. For example "video.mp4"
-     */
-    public void createMedia(String media, String path) {
-
-    }
-
-    public void setSize(int height, int width) {
-
-    }
-
-    /**
-     * Adds controls to a video, so the user can play or pause it, as well as
-     * control the sound volume.
-     *
-     * @param play
-     * @param volume
-     * @param pause
-     */
-    public void addControls(String play, String volume, String pause) {
-
-    }
-
-    /**
-     * Describes what's in the video or image.
-     * The description text appears if the video or image doesn't load.
-     *
-     * @param description
-     */
-    public void setDescription(String description) {
-
-    }
-
     public void setId(String id) {
-
-    }
-
-    public void setContent(String content) {
-
-    }
-
-    /**
-     * Creates padding around a desired element.
-     *
-     * @param size The string to define the size of padding.
-     */
-    public void setPadding(String size) {
 
     }
 }

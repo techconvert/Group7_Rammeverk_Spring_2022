@@ -2,13 +2,26 @@ package WebGenClient;
 import WebGenLib.*;
 import WebGenLib.HTML.Core.*;
 import WebGenLib.HTML.*;
+import WebGenLib.Templates.DefaultBoxTemplate;
 import WebGenLib.Templates.DefaultPageTemplate;
+import org.w3c.dom.Text;
+
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 
 public class Client {
 
     public static void main(String[] args) {
 
-        //System.out.println("Test");
+        OutputStream destination = System.out;
+        if(args.length == 1) {
+            try {
+                destination = new FileOutputStream(args[0]);
+            }
+            catch (Exception exception) {
+
+            }
+        }
 
         WebGen wgl = new WebGen();
 
@@ -41,7 +54,7 @@ public class Client {
                 .append("item 3");
 
         Table table = (Table) Element.create("table");
-        template.getMain().insert(table);
+        template.getAside().insert(table);
         table.addTableRow().addTableHeaderCell("Number")
                 .append("Translation");
         table.addTableRow().addTableCell("Yksi")
@@ -50,11 +63,14 @@ public class Client {
                 .append("Two");
         table.addTableRow().addTableCell("Kolmen")
                 .append("Three");
-        TableRow testRow = table.addTableRow();
-        testRow.addTableCell("Test add");
-        TableRow testRow2 = testRow.append();
-        testRow2.addTableCell("Test append");
 
+        DefaultBoxTemplate box = new DefaultBoxTemplate();
+        template.getMainWrapper().insert(box);
+        box.getHeader().insert(new TextContent("About CSS"));
+        Element image = Element.create("img");
+        image.addAttribute(Attribute.create("src", "images/medietyper.jpg"));
+        image.addAttribute(Attribute.create("alt", "Media types"));
+        box.getInnerBox().addPictureElement(image);
 
         Element styleLinkAll = Element.create("link");
         styleLinkAll.addAttribute(Attribute.create("rel", "stylesheet"));
@@ -71,7 +87,13 @@ public class Client {
                 .insert(styleLinkAll)
                 .insert(styleLinkScreen);
 
-        template.render();
+        try {
+            template.render(destination);
+        }
+        catch (Exception exception) {
+
+        }
+
 
     }
 }

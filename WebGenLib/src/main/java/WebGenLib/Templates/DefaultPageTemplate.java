@@ -9,6 +9,7 @@ public class DefaultPageTemplate extends Page {
     private Element header;
     private Element nav;
     private Element main;
+    private Element mainWrapper;
     private Element aside;
     private Element footer;
     private List menu;
@@ -26,6 +27,9 @@ public class DefaultPageTemplate extends Page {
         menu = List.create("ul");
         menuOpen.insert(menu);
         main = Element.create("main");
+        mainWrapper = Element.create("section");
+        mainWrapper.addAttribute(Attribute.create("id", "wrapper"));
+        main.insert(mainWrapper);
         aside = Element.create("aside");
         footer = Element.create("footer");
 
@@ -46,6 +50,10 @@ public class DefaultPageTemplate extends Page {
 
     public Element getMain() {
         return main;
+    }
+
+    public Element getMainWrapper() {
+        return mainWrapper;
     }
 
     public Element getAside() {

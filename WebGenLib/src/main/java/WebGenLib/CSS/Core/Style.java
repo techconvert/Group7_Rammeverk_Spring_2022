@@ -13,5 +13,10 @@ public abstract class Style {
 
     public void createBorder(String type, String weight) {}
 
+    /**
+     * Creates padding around a desired element.
+     *
+     * @param size The string to define the size of padding.
+     */
     public void createPadding(String size) {}
 }

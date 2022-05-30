@@ -2,6 +2,9 @@ package WebGenLib.HTML.Core;
 
 import WebGenLib.Interfaces.HTMLContent;
 
+import java.io.OutputStream;
+import java.nio.charset.StandardCharsets;
+
 public class Page implements HTMLContent {
     protected Element head;
     protected Element body;
@@ -12,11 +15,11 @@ public class Page implements HTMLContent {
     }
 
     @Override
-    public void render() {
-        System.out.println("<html>");
-        head.render();
-        body.render();
-        System.out.println("</html>");
+    public void render(OutputStream destination) throws Exception {
+        destination.write(new String("<html>\n").getBytes(StandardCharsets.UTF_8));
+        head.render(destination);
+        body.render(destination);
+        destination.write(new String("</html>\n").getBytes(StandardCharsets.UTF_8));
     }
 
     public Element getHead() {
