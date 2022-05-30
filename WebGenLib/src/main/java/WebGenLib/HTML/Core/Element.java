@@ -1,13 +1,12 @@
 package WebGenLib.HTML.Core;
 
-import WebGenLib.HTML.List;
-import WebGenLib.HTML.ListItem;
+import WebGenLib.HTML.*;
 import WebGenLib.Interfaces.HTMLContent;
 
 import java.util.ArrayList;
 
 public class Element implements HTMLContent {
-    String tag;
+    protected String tag;
     ArrayList<HTMLContent> content = new ArrayList<>();
     ArrayList<Attribute> attributes = new ArrayList<>();
 
@@ -23,16 +22,31 @@ public class Element implements HTMLContent {
      * Method that makes any element.
      *
      * @param typeOfElement String defining the type of element user wishes to make.
-     * @return
+     * @return Element
      */
     public static Element create(String typeOfElement) {
         Element element;
-        if (typeOfElement.equals("li")) {
-            element = ListItem.create(typeOfElement);
-        } else if (typeOfElement.equals("ul") || typeOfElement.equals("ol")) {
-            element = List.create(typeOfElement);
-        } else {
-            element = new Element(typeOfElement);
+
+        switch (typeOfElement) {
+            case "li":
+                element = ListItem.create(typeOfElement);
+                break;
+            case "ul":
+            case "ol":
+                element = List.create(typeOfElement);
+                break;
+            case "table":
+                element = Table.create(typeOfElement);
+                break;
+            case "tr":
+                element = TableRow.create(typeOfElement);
+                break;
+            case "td":
+            case "th":
+                element = TableCell.create(typeOfElement);
+                break;
+            default:
+                element = new Element(typeOfElement);
         }
         return element;
     }
@@ -66,25 +80,6 @@ public class Element implements HTMLContent {
             child.render();
         }
         System.out.println("</" + tag + ">");
-    }
-
-    /**
-     * Makes a new row in a table.
-     * @param numOfRows
-     */
-    public void setRows(int numOfRows) {
-    }
-
-    public void appendRow() {
-
-    }
-
-    public void appendCell() {
-
-    }
-
-    public void setColumns(int numOfColumns) {
-
     }
 
     /**

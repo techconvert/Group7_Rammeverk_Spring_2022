@@ -1,7 +1,7 @@
 package WebGenClient;
 import WebGenLib.*;
 import WebGenLib.HTML.Core.*;
-import WebGenLib.HTML.List;
+import WebGenLib.HTML.*;
 import WebGenLib.Templates.DefaultPageTemplate;
 
 public class Client {
@@ -39,6 +39,22 @@ public class Client {
                 .addListItem("item 1")
                 .append("item 2")
                 .append("item 3");
+
+        Table table = (Table) Element.create("table");
+        template.getMain().insert(table);
+        table.addTableRow().addTableHeaderCell("Number")
+                .append("Translation");
+        table.addTableRow().addTableCell("Yksi")
+                .append("One");
+        table.addTableRow().addTableCell("Kaksi")
+                .append("Two");
+        table.addTableRow().addTableCell("Kolmen")
+                .append("Three");
+        TableRow testRow = table.addTableRow();
+        testRow.addTableCell("Test add");
+        TableRow testRow2 = testRow.append();
+        testRow2.addTableCell("Test append");
+
 
         Element styleLinkAll = Element.create("link");
         styleLinkAll.addAttribute(Attribute.create("rel", "stylesheet"));
