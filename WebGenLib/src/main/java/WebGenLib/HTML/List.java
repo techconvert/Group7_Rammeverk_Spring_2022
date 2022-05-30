@@ -1,11 +1,12 @@
 package WebGenLib.HTML;
 
 import WebGenLib.HTML.Core.Element;
+import WebGenLib.HTML.Core.TextContent;
 
 public class List extends Element {
 
-    protected List() {
-
+    protected List(String tag) {
+        super(tag);
     }
 
     /**
@@ -15,7 +16,7 @@ public class List extends Element {
      * @return
      */
     public static List create(String listType) {
-        return new List();
+        return new List(listType);
     }
 
     /**
@@ -23,7 +24,12 @@ public class List extends Element {
      *
      * @param text
      */
-    public void append(String text) {
+    public ListItem addListItem(String text) {
+        ListItem listItem = ListItem.create("li");
+        listItem.insert(new TextContent(text));
+        this.insert(listItem);
+        listItem.parent = this;
 
+        return listItem;
     }
 }

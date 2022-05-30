@@ -1,6 +1,7 @@
 package WebGenClient;
 import WebGenLib.*;
 import WebGenLib.HTML.Core.*;
+import WebGenLib.HTML.List;
 import WebGenLib.Templates.DefaultPageTemplate;
 
 public class Client {
@@ -33,6 +34,27 @@ public class Client {
 
         DefaultPageTemplate template = new DefaultPageTemplate();
         template.getHeader().insert(new TextContent("Welcome to the web carousel!"));
+
+        template.getMenu()
+                .addListItem("item 1")
+                .append("item 2")
+                .append("item 3");
+
+        Element styleLinkAll = Element.create("link");
+        styleLinkAll.addAttribute(Attribute.create("rel", "stylesheet"));
+        styleLinkAll.addAttribute(Attribute.create("media", "all"));
+        styleLinkAll.addAttribute(Attribute.create("type", "text/css"));
+        styleLinkAll.addAttribute(Attribute.create("href", "stil/stilall.css"));
+        Element styleLinkScreen = Element.create("link");
+        styleLinkScreen.addAttribute(Attribute.create("rel", "stylesheet"));
+        styleLinkScreen.addAttribute(Attribute.create("media", "screen"));
+        styleLinkScreen.addAttribute(Attribute.create("type", "text/css"));
+        styleLinkScreen.addAttribute(Attribute.create("href", "stil/stil.css"));
+
+        template.getHead()
+                .insert(styleLinkAll)
+                .insert(styleLinkScreen);
+
         template.render();
 
     }

@@ -1,7 +1,9 @@
 package WebGenLib.Templates;
 
+import WebGenLib.HTML.Core.Attribute;
 import WebGenLib.HTML.Core.Element;
 import WebGenLib.HTML.Core.Page;
+import WebGenLib.HTML.List;
 
 public class DefaultPageTemplate extends Page {
     private Element header;
@@ -9,11 +11,20 @@ public class DefaultPageTemplate extends Page {
     private Element main;
     private Element aside;
     private Element footer;
+    private List menu;
 
     public DefaultPageTemplate() {
         super();
         header = Element.create("header");
         nav = Element.create("nav");
+        Element menuClosed = Element.create("div");
+        menuClosed.addAttribute(Attribute.create("id", "menu_closed"));
+        nav.insert(menuClosed);
+        Element menuOpen = Element.create("div");
+        menuOpen.addAttribute(Attribute.create("id", "menu_open"));
+        nav.insert(menuOpen);
+        menu = List.create("ul");
+        menuOpen.insert(menu);
         main = Element.create("main");
         aside = Element.create("aside");
         footer = Element.create("footer");
@@ -43,5 +54,9 @@ public class DefaultPageTemplate extends Page {
 
     public Element getFooter() {
         return footer;
+    }
+
+    public List getMenu() {
+        return menu;
     }
 }

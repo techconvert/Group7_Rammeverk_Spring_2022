@@ -1,5 +1,7 @@
 package WebGenLib.HTML.Core;
 
+import WebGenLib.HTML.List;
+import WebGenLib.HTML.ListItem;
 import WebGenLib.Interfaces.HTMLContent;
 
 import java.util.ArrayList;
@@ -24,7 +26,15 @@ public class Element implements HTMLContent {
      * @return
      */
     public static Element create(String typeOfElement) {
-        return new Element(typeOfElement);
+        Element element;
+        if (typeOfElement.equals("li")) {
+            element = ListItem.create(typeOfElement);
+        } else if (typeOfElement.equals("ul") || typeOfElement.equals("ol")) {
+            element = List.create(typeOfElement);
+        } else {
+            element = new Element(typeOfElement);
+        }
+        return element;
     }
 
     /**
@@ -55,7 +65,6 @@ public class Element implements HTMLContent {
         for (HTMLContent child : content) {
             child.render();
         }
-
         System.out.println("</" + tag + ">");
     }
 
