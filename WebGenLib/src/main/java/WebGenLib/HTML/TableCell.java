@@ -3,11 +3,14 @@ package WebGenLib.HTML;
 import WebGenLib.HTML.Core.Element;
 import WebGenLib.HTML.Core.TextContent;
 
+/**
+ * Class to represent a single HTML &lt;td&gt; or &lt;th&gt; table cell.
+ */
 public class TableCell extends Element {
     TableRow parent;
 
     /**
-     * Default constructor. Assumes "td" is most commonly used.
+     * Default constructor. Initialises the table cell as a &lt;td&gt;.
      */
     protected TableCell() {
         super("td");
@@ -22,11 +25,21 @@ public class TableCell extends Element {
         super(tag);
     }
 
+    /**
+     * Factory method for creating a new table cell.
+     * @param tag The tag of the new table cell.
+     * @return The new table cell.
+     */
     public static TableCell create(String tag) {
 
         return new TableCell(tag);
     }
 
+    /**
+     * Method for appending a new TableCell to the parent TableRow.
+     * @param content The text of the new TableCell.
+     * @return The new TableCell.
+     */
     public TableCell append(String content) {
         TableCell tableCell = (TableCell) Element.create(this.tag);
         tableCell.insert(new TextContent(content));

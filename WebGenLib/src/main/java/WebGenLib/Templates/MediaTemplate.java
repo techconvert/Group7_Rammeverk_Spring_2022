@@ -1,8 +1,13 @@
 package WebGenLib.Templates;
 
+/**
+ * Not implemented.
+ */
 public class MediaTemplate {
 
     /**
+     * Not implemented.
+     *
      * Inserts video into the page.
      *
      * @param media String that defines type of media.
@@ -12,11 +17,16 @@ public class MediaTemplate {
 
     }
 
+    /**
+     * Not implemented.
+     */
     public void setSize(int height, int width) {
 
     }
 
     /**
+     * Not implemented.
+     *
      * Adds controls to a video, so the user can play or pause it, as well as
      * control the sound volume.
      *
@@ -29,6 +39,8 @@ public class MediaTemplate {
     }
 
     /**
+     * Not implemented.
+     *
      * Describes what's in the video or image.
      * The description text appears if the video or image doesn't load.
      *

@@ -3,8 +3,12 @@ package WebGenLib.Templates;
 import WebGenLib.HTML.Core.Attribute;
 import WebGenLib.HTML.Core.Element;
 import WebGenLib.HTML.Core.Page;
+import WebGenLib.HTML.Core.TextContent;
 import WebGenLib.HTML.List;
 
+/**
+ * Default page template to showcase composite functionality.
+ */
 public class DefaultPageTemplate extends Page {
     private Element header;
     private Element nav;
@@ -14,6 +18,9 @@ public class DefaultPageTemplate extends Page {
     private Element footer;
     private List menu;
 
+    /**
+     * Default constructor to initialise the template with appropriate values.
+     */
     public DefaultPageTemplate() {
         super();
         header = Element.create("header");

@@ -7,21 +7,24 @@ import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
+/**
+ * Class to represent a single HTML tag and its contents.
+ */
 public class Element implements HTMLContent {
     protected String tag;
     ArrayList<HTMLContent> content = new ArrayList<>();
     ArrayList<Attribute> attributes = new ArrayList<>();
 
-    protected Element() {
-
-    }
-
+    /**
+     * Protected constructor to initialise the tag.
+     * @param tag The HTML tag type for the element.
+     */
     protected Element(String tag) {
         this.tag = tag;
     }
 
     /**
-     * Method that makes any element.
+     * Static method that makes any element.
      *
      * @param typeOfElement String defining the type of element user wishes to make.
      * @return Element
@@ -57,20 +60,27 @@ public class Element implements HTMLContent {
      * Adds element as child.
      *
      * @param child The element to add.
-     * @return
+     * @return Same Element upon which the method has been called.
      */
     public Element insert(HTMLContent child) {
         content.add(child);
         return this;
     }
 
+    /**
+     * Adds attribute to the tag.
+     * @param attribute
+     * @return The Attribute that was added.
+     */
     public Attribute addAttribute(Attribute attribute) {
         attributes.add(attribute);
         return attribute;
     }
 
     /**
-     * Displays content.
+     * Recursive method that displays content.
+     * @param destination The OutputStream to write to.
+     * @throws Exception
      */
     public void render(OutputStream destination)  throws Exception{
         destination.write(new String("<" + tag).getBytes(StandardCharsets.UTF_8));
@@ -85,26 +95,9 @@ public class Element implements HTMLContent {
     }
 
     /**
-     * Method to display the Facebook button.
+     * Not implemented.
+     * @param id
      */
-    public void addFbButton() {
-
-    }
-
-    /**
-     * Method to display the Twitter button.
-     */
-    public void addTwitterButton() {
-
-    }
-
-    /**
-     * Method to display the Instagram button.
-     */
-    public void addIgButton() {
-
-    }
-
     public void setId(String id) {
 
     }

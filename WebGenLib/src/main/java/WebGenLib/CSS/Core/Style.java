@@ -2,6 +2,9 @@ package WebGenLib.CSS.Core;
 
 import WebGenLib.HTML.Core.Attribute;
 
+/**
+ * Not implemented.
+ */
 public abstract class Style {
 
     protected Style() {
@@ -14,6 +17,8 @@ public abstract class Style {
     public void createBorder(String type, String weight) {}
 
     /**
+     * Not implemented.
+     *
      * Creates padding around a desired element.
      *
      * @param size The string to define the size of padding.

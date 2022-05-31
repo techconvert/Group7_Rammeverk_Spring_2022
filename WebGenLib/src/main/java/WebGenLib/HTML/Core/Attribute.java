@@ -3,16 +3,31 @@ package WebGenLib.HTML.Core;
 import WebGenLib.CSS.Core.Style;
 import WebGenLib.CSS.MediaQuery;
 
+/**
+ * A class which represents an attribute within an HTML tag
+ */
 public class Attribute extends Style {
     String name;
     String value;
 
+    /**
+     * Protected constructor for the class.
+     * @param name The attribute name for the new Attribute.
+     * @param value The attribute value for the new Attribute.
+     */
     protected Attribute(String name, String value) {
         this.name = name;
         this.value = value;
     }
 
+    /**
+     * Static factory method for creating new objects of type Attribute
+     * @param name The name of the Attribute.
+     * @param value The value of the Attribute.
+     * @return The new Attribute.
+     */
     public static Attribute create(String name, String value) {
+
         return new Attribute(name, value);
     }
 
@@ -28,6 +43,8 @@ public class Attribute extends Style {
     }
 
     /**
+     * Not implemented.
+     *
      * Defines the width for a desired, already defined Media Query.
      * Here the user can decide their own default size for each query.
      *
@@ -38,11 +55,18 @@ public class Attribute extends Style {
 
     }
 
+    /**
+     * Not implemented.
+     * @param color
+     * @return
+     */
     public Attribute createBackgroundColor(String color) {
         return null;
     }
 
     /**
+     * Not implemented.
+     *
      * Makes a line around the element.
      *
      * @param type String describing the border (solid, dotted, dashed...)
@@ -52,6 +76,8 @@ public class Attribute extends Style {
     public void createBorder(String type, String weight, String color) {}
 
     /**
+     * Not implemented.
+     *
      * Defines how thick the font is going to be.
      *
      * @param weight
@@ -59,6 +85,8 @@ public class Attribute extends Style {
     public void createFontWeight(String weight) {}
 
     /**
+     * Not implemented.
+     *
      * Defines how the text is going to look like when the user hovers over it with the cursor.
      */
     public void setHoverStyle() {

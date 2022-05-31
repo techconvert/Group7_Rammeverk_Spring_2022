@@ -46,7 +46,7 @@ public class Client {
         element.render(); */
 
         DefaultPageTemplate template = new DefaultPageTemplate();
-        template.getHeader().insert(new TextContent("Welcome to the web carousel!"));
+        template.getHeader().insert(Element.create("h1").insert(new TextContent("Welcome to the web carousel!")));
 
         template.getMenu()
                 .addListItem("item 1")
@@ -61,7 +61,7 @@ public class Client {
                 .append("One");
         table.addTableRow().addTableCell("Kaksi")
                 .append("Two");
-        table.addTableRow().addTableCell("Kolmen")
+        table.addTableRow().addTableCell("Kolme")
                 .append("Three");
 
         DefaultBoxTemplate box = new DefaultBoxTemplate();
@@ -71,6 +71,23 @@ public class Client {
         image.addAttribute(Attribute.create("src", "resources/images/medietyper.jpg"));
         image.addAttribute(Attribute.create("alt", "Media types"));
         box.getInnerBox().addPictureElement(image);
+
+        setStyles(template.getHead());
+
+        Element copyright = Element.create("span");
+        copyright.insert(new TextContent("Copyright &copy; 2022 Group 7"));
+        copyright.addAttribute(Attribute.create("class", "copyrightnotice"));
+        template.getFooter().insert(copyright);
+
+        try {
+            template.render(destination);
+        }
+        catch (Exception exception) {
+
+        }
+    }
+
+    public static void setStyles(Element head) {
 
         Element styleLinkAll = Element.create("link");
         styleLinkAll.addAttribute(Attribute.create("rel", "stylesheet"));
@@ -82,23 +99,8 @@ public class Client {
         styleLinkScreen.addAttribute(Attribute.create("media", "screen"));
         styleLinkScreen.addAttribute(Attribute.create("type", "text/css"));
         styleLinkScreen.addAttribute(Attribute.create("href", "resources/css/style.css"));
-        Element styleLinkPrint = Element.create("link");
-        styleLinkScreen.addAttribute(Attribute.create("rel", "stylesheet"));
-        styleLinkScreen.addAttribute(Attribute.create("media", "screen"));
-        styleLinkScreen.addAttribute(Attribute.create("type", "text/css"));
-        styleLinkScreen.addAttribute(Attribute.create("href", "resources/css/styleprint.css"));
 
-        template.getHead()
-                .insert(styleLinkAll)
-                .insert(styleLinkScreen);
-
-        try {
-            template.render(destination);
-        }
-        catch (Exception exception) {
-
-        }
-
-
+        head.insert(styleLinkAll)
+            .insert(styleLinkScreen);
     }
 }
