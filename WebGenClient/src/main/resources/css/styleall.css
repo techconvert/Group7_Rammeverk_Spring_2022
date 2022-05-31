@@ -1,0 +1,192 @@
+#ord {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	padding: 10px;
+	justify-content: space-between;
+}
+
+
+.picture {
+	float: right;
+	
+}
+
+.articleimg {
+	max-width: 400px;
+	flex-grow: 1;
+	flex-shrink: 1;
+	flex-basis: 250px;
+	border: 1px solid black;
+}
+
+.articlefigure {
+	float: right;
+	flex-direction: column;
+}
+
+figure .svgimage {
+	padding: 15px;
+	min-width: 370px;
+	background-color: whitesmoke;
+}
+
+#wrapper {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	padding: 10px;
+}
+
+header {
+	grid-area: header;
+	display: flex;
+	padding: 10px;
+	background-size: 100%;
+	justify-content: center;
+	color: white;
+	font-size: x-large;	
+	/*flex-grow: 1;
+	flex-shrink: 2;*/
+}
+
+h2 {
+	text-shadow: 4px 2px 0 rgba(0,0,0,0.1);
+}
+
+nav {
+	grid-area: nav;
+	display: flex;
+	/*flex-grow: 1;
+	flex-shrink: 2;*/
+	justify-content: space-between;
+	align-items: center;
+	min-height: 30px;
+	background-image: linear-gradient(to right, #72efdd , #923c8c);
+}
+
+
+nav ul {
+	display: flex;
+	justify-content: space-around;
+	align-items: center; 
+	list-style: none;
+	width: 80%;
+}
+
+nav li a {
+	font-size: x-large;
+	
+	text-decoration: none;
+	color: black;
+}
+
+main {
+	grid-area: main;
+	border: solid;
+	border-radius: 10px;
+	box-shadow: 5px 5px 7px;
+}
+
+#tag {
+	list-style: none;
+	margin-left: 0;
+	padding-left: 1em;
+}
+
+.articletableheader {
+	text-align: left;
+}	
+
+#tag > li:before {
+	display: inline-block;
+	content: "-";
+	width: 1em;
+	margin-left: -1em;
+}
+
+.box {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}
+
+.innerbox {
+	display: flex;
+	flex-direction: row;
+}
+
+.textleft {
+	flex-grow: 1;
+	flex-shrink: 1;
+	flex-basis: 350px;
+	flex-grow: 3;
+	flex-shrink: 1;
+}
+
+figure {
+	max-width: 50%;
+}
+
+figure img {
+	max-width: 100%;
+	/*flex-grow: 1;
+	flex-shrink: 1;
+	flex-basis: 250px;*/
+	border: 1px solid black;
+}
+
+.pic {
+	max-width: 300px;
+	/*flex-direction: column;*/
+}
+
+figcaption span {
+	font-size: smaller;
+}
+
+figcaption a {
+	color: dimgrey;
+}
+
+.button {
+	width: 70px;
+	padding: 7px;
+	text-decoration: none;
+	color: black;
+	background-color: #80acdb;
+	font-weight: bold;
+	font-size: smaller;
+	box-shadow: 2px 5px 5px;
+	border-style: inset;
+}
+
+aside {
+	grid-area: aside;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 10px;
+	border: 1px solid black;
+	border-radius: 10px;
+	box-shadow: 5px 5px 7px;
+	font-size: larger;
+}
+
+aside a {
+	font-size: smaller;
+	color: black;
+	text-decoration: none;
+}
+
+aside a:hover {
+	text-decoration: underline;
+}
+
+footer {
+	grid-area: footer;
+	display: flex;
+	background-color: #80acdb;
+	padding: 25px;
+	justify-content: space-around;
+}

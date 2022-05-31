@@ -68,7 +68,7 @@ public class Client {
         template.getMainWrapper().insert(box);
         box.getHeader().insert(new TextContent("About CSS"));
         Element image = Element.create("img");
-        image.addAttribute(Attribute.create("src", "images/medietyper.jpg"));
+        image.addAttribute(Attribute.create("src", "resources/images/medietyper.jpg"));
         image.addAttribute(Attribute.create("alt", "Media types"));
         box.getInnerBox().addPictureElement(image);
 
@@ -76,12 +76,17 @@ public class Client {
         styleLinkAll.addAttribute(Attribute.create("rel", "stylesheet"));
         styleLinkAll.addAttribute(Attribute.create("media", "all"));
         styleLinkAll.addAttribute(Attribute.create("type", "text/css"));
-        styleLinkAll.addAttribute(Attribute.create("href", "stil/stilall.css"));
+        styleLinkAll.addAttribute(Attribute.create("href", "resources/css/styleall.css"));
         Element styleLinkScreen = Element.create("link");
         styleLinkScreen.addAttribute(Attribute.create("rel", "stylesheet"));
         styleLinkScreen.addAttribute(Attribute.create("media", "screen"));
         styleLinkScreen.addAttribute(Attribute.create("type", "text/css"));
-        styleLinkScreen.addAttribute(Attribute.create("href", "stil/stil.css"));
+        styleLinkScreen.addAttribute(Attribute.create("href", "resources/css/style.css"));
+        Element styleLinkPrint = Element.create("link");
+        styleLinkScreen.addAttribute(Attribute.create("rel", "stylesheet"));
+        styleLinkScreen.addAttribute(Attribute.create("media", "screen"));
+        styleLinkScreen.addAttribute(Attribute.create("type", "text/css"));
+        styleLinkScreen.addAttribute(Attribute.create("href", "resources/css/styleprint.css"));
 
         template.getHead()
                 .insert(styleLinkAll)

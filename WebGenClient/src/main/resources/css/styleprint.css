@@ -1,0 +1,38 @@
+body {
+	font-family: Georgia, serif;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+}
+
+.artikkel {
+	font-family: Georgia, serif;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+}
+
+nav {
+	display: none;
+}
+
+main {
+	box-shadow: none;
+}
+
+table {
+	page-break-inside: avoid;
+	page-break-after: always;
+}
+
+p {
+	page-break-inside: avoid;
+}
+
+footer {
+	background-color: white;
+}
+
+.button {
+	display: none;
+}
