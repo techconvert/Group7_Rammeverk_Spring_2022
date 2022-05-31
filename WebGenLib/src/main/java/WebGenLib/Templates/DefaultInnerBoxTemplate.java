@@ -7,7 +7,7 @@ import org.w3c.dom.Text;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 
-public class DefaultInnerBoxTemplate extends Element {
+public class DefaultInnerBoxTemplate extends CoreTemplate {
     private Element description;
     private Element figure;
     private Element picture;
@@ -36,11 +36,16 @@ public class DefaultInnerBoxTemplate extends Element {
         element.insert(figCaption);
     }
 
-    @Override
-    public void render(OutputStream destination) throws Exception {
+    public void renderOpeningTag(OutputStream destination) throws Exception {
         destination.write(new String("<section class=\"innerbox\">\n").getBytes(StandardCharsets.UTF_8));
+    }
+
+    public void renderContent(OutputStream destination) throws Exception {
         description.render(destination);
         figure.render(destination);
+    }
+
+    public void renderClosingTag(OutputStream destination) throws Exception {
         destination.write(new String("</section>\n").getBytes(StandardCharsets.UTF_8));
     }
 

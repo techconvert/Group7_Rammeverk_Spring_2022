@@ -14,7 +14,7 @@ public class Client {
     public static void main(String[] args) {
 
         OutputStream destination = System.out;
-        if(args.length == 1) {
+        if (args.length == 1) {
             try {
                 destination = new FileOutputStream(args[0]);
             }

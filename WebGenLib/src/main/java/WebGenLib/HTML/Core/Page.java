@@ -5,7 +5,7 @@ import WebGenLib.Interfaces.HTMLContent;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
 
-public class Page implements HTMLContent {
+public class Page extends CoreTemplate {
     protected Element head;
     protected Element body;
 
@@ -14,11 +14,16 @@ public class Page implements HTMLContent {
         body = new Element("body");
     }
 
-    @Override
-    public void render(OutputStream destination) throws Exception {
+    public void renderOpeningTag(OutputStream destination) throws Exception {
         destination.write(new String("<html>\n").getBytes(StandardCharsets.UTF_8));
+    }
+
+    public void renderContent(OutputStream destination) throws Exception {
         head.render(destination);
         body.render(destination);
+    }
+
+    public void renderClosingTag(OutputStream destination) throws Exception {
         destination.write(new String("</html>\n").getBytes(StandardCharsets.UTF_8));
     }
 
