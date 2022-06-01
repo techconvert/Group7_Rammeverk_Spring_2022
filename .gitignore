@@ -1,6 +1,7 @@
 .gradle
 WebGenLib/build/
 !src/**/build/
+!WebGenLib/build/libs/WebGenLib-1.0-SNAPSHOT.jar
 
 # Ignore Gradle GUI config
 gradle-app.setting
