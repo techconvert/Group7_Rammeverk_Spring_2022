@@ -47,18 +47,21 @@ public class Client {
         template.getMenu()
                 .addListItem("item 1")
                 .append("item 2")
-                .append("item 3");
+                .append("item 3")
+                .append("item 4");
 
         Table table = (Table) Element.create("table");
         template.getAside().insert(table);
         table.addTableRow().addTableHeaderCell("Number")
-                .append("Translation");
+                .append("English").append("Norwegian");
+        table.addTableRow().addTableCell("Nolla")
+                .append("Zero").append("Null");
         table.addTableRow().addTableCell("Yksi")
-                .append("One");
+                .append("One").append("En");
         table.addTableRow().addTableCell("Kaksi")
-                .append("Two");
+                .append("Two").append("To");
         table.addTableRow().addTableCell("Kolme")
-                .append("Three");
+                .append("Three").append("Tre");
 
         DefaultBoxTemplate box = new DefaultBoxTemplate();
         template.getMainWrapper().insert(box);
