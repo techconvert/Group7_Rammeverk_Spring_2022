@@ -16,7 +16,6 @@ gradle-app.setting
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
-WebGenLib/out/artifacts/WebGenLib_jar/WebGenLib.jar
 WebGenLib/.idea/artifacts/WebGenLib_jar2.xml
 .idea/vcs.xml
 .idea/runConfigurations.xml
