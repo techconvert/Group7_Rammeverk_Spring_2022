@@ -1,9 +1,8 @@
-package WebGenClient;
-import WebGenLib.*;
-import WebGenLib.HTML.Core.*;
-import WebGenLib.HTML.*;
-import WebGenLib.Templates.DefaultBoxTemplate;
-import WebGenLib.Templates.DefaultPageTemplate;
+package webgenclient;
+
+import webgenlib.html.core.*;
+import webgenlib.html.*;
+import webgenlib.templates.*;
 import org.w3c.dom.Text;
 
 import java.io.FileOutputStream;
@@ -22,9 +21,7 @@ public class Client {
 
             }
         }
-
-        WebGen wgl = new WebGen();
-
+        
     /*
         wgl.createPage("Hello!");
         System.out.println();
