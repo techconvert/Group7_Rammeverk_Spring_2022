@@ -27,3 +27,4 @@ WebGenLib/.idea/artifacts/WebGenLib_jar2.xml
 .idea/gradle.xml
 WebGenClient/build/tmp/compileJava/previous-compilation-data.bin
 WebGenClient/src/main/test_framework.html
+*.class
