@@ -3,7 +3,6 @@ package webgenclient;
 import webgenlib.html.core.*;
 import webgenlib.html.*;
 import webgenlib.templates.*;
-import org.w3c.dom.Text;
 
 import java.io.FileOutputStream;
 import java.io.OutputStream;
@@ -21,7 +20,7 @@ public class Client {
 
             }
         }
-        
+
     /*
         wgl.createPage("Hello!");
         System.out.println();
